@@ -1,0 +1,28 @@
+
+$glob-desktop-max:    1920px;
+$glob-desktop-medium: 1600px;
+$glob-desktop-min:    1200px;
+$glob-tablet-max:     1024px;
+$glob-tablet-medium:  992px;
+$glob-tablet-min:     768px;
+$glob-phone-max:      650px;
+$glob-phone-medium:   480px;
+$glob-phone-min:      320px;
+
+@mixin media($min: null, $max: null) {
+  @if ($min and $max) {
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
+      @content
+    }
+  }
+  @else if($min) {
+    @media (min-width: #{$min}) {
+      @content
+    }
+  }
+  @else if($max) {
+    @media (max-width: #{$max}) {
+      @content
+    }
+  }
+}

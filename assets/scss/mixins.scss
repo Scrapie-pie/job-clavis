@@ -1,0 +1,32 @@
+@mixin set_distance_child($vector: row, $distance: null) {
+  & > *:not(:last-child) {
+    @if ($vector == row){
+      margin-right: $distance;
+    } @else {
+      margin-bottom: $distance;
+    }
+  }
+}
+
+
+@mixin flex_it($vector: row, $distance: null) {
+  display: flex;
+  flex-direction: $vector;
+
+  @if ($distance) {
+    @include set_distance_child($vector, $distance)
+  }
+}
+
+@mixin gradient_border($width) {
+  position: relative;
+  display: inline;
+  &::before {
+    content: '';
+    height: 2px;
+    background: linear-gradient(107.51deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 47.92%, rgba(255, 113, 154, 0.9) 100%);
+    width: $width;
+    bottom: -7px;
+    position: absolute;
+  }
+}

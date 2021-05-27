@@ -1,0 +1,57 @@
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+$fs-headers: (
+  h1: 88,
+  h2: 44,
+  h3: 36,
+  h4: 24,
+  h5: 18,
+  h6: 16
+);
+
+$fs-other: (
+  small:    15px,
+  //small:    14px,
+  small-sm: 12px,
+  small-xs: 10px,
+);
+
+%headers {
+  line-height: 1;
+  //font-weight: 800;
+  font-style: normal;
+  margin-bottom: .45em;
+  margin-top: 0;
+  color: $glob-color-primary;
+}
+
+@mixin styleFonts {
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: $glob-color-primary;
+  }
+
+  p {
+    line-height: 2em;
+    margin-bottom: 1.5em;
+  }
+
+  @each $h, $size in $fs-headers {
+    #{$h} {
+      @extend %headers;
+      font-weight: 800;
+      font-size: #{$size}px;
+    }
+
+    .#{$h} {
+      @extend %headers;
+      font-weight: 600;
+      font-size: #{$size}px;
+    }
+    .#{$h}_bold {
+      font-weight: 800;
+    }
+  }
+}
