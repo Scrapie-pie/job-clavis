@@ -80,6 +80,7 @@ export default {
   }
 }
 
+
 .step-two {
   &__wrapper {
     //padding-top: 110px;
