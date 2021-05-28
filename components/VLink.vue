@@ -31,6 +31,7 @@ export default {
 
 <style lang="scss">
   .link {
+    @include trans;
     //@include flex_it($distance: 10px);
 
     &__content {

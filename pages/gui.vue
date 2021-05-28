@@ -10,6 +10,11 @@
 
     SectionProfit
     SectionTeam
+
+    SectionProjects
+
+    SectionSendForm
+
 </template>
 
 <script>
@@ -30,6 +35,8 @@ import SectionNow from "@/components/SectionNow";
 import SectionOffer from "@/components/SectionOffer";
 import SectionProfit from "@/components/SectionProfit";
 import SectionTeam from "@/components/SectionTeam";
+import SectionProjects from "@/components/SectionProjects";
+import SectionSendForm from "@/components/SectionSendForm";
 
 export default {
     components: {
@@ -48,7 +55,9 @@ export default {
         SectionNow,
         SectionOffer,
         SectionProfit,
-        SectionTeam
+        SectionTeam,
+        SectionProjects,
+        SectionSendForm
     }
 }
 </script>
