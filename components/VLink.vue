@@ -2,7 +2,7 @@
   a(:href="href" :class="gradientStyle()").link
     VIcon(:name="icon" v-if="icon")
 
-    .link__content: slot
+    span.link__content: slot
 
 </template>
 
@@ -42,6 +42,14 @@ export default {
       background: -webkit-linear-gradient(300deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
+
+      //&:hover {
+      //  background: -webkit-linear-gradient(100deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
+      //  -webkit-background-clip: text;
+      //  -webkit-text-fill-color: transparent;
+      //}
     }
+
   }
 </style>

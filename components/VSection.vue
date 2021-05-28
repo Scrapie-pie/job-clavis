@@ -1,6 +1,6 @@
 <template lang="pug">
-  section
-    component(:is="gradient" :theme="gradientTheme()").v-section
+  section.v-section
+    component(:is="gradient" :theme="gradientTheme()").v-section__wrapper
       .container
         slot
 
@@ -30,7 +30,9 @@ export default {
 <style lang="scss">
 
   .v-section {
-    padding: 110px 0;
+    &__wrapper {
+      padding: 110px 0;
+    }
     //background-color: #E5E5E5;
   }
 
