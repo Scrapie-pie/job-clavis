@@ -13,7 +13,7 @@
     "node-sass": "^5.0.0",
     "nuxt": "^2.15.3",
     "nuxt-svg-loader": "^1.2.0",
-    "vee-validate": "^3.4.5"
+    "vee-validate": "^3.4.7"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

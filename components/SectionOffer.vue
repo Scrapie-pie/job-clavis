@@ -13,13 +13,13 @@
     .section-offer__bottom
       .section-offer__bottom-item
         .h4.section-offer__bottom-title Сложные проекты
-        VList.section-offer__bottom-checkmarks
+        VList(listStyle="checkmarks").section-offer__bottom-checkmarks
           li На основе структуры и прототипов можно рассчитать объем работ по дизайну и вёрстке
           li На основе подробного ТЗ можно сделать расчёт программирования / технической реализации проекта.
 
       .section-offer__bottom-item
         .h4.section-offer__bottom-title Для тендера
-        VList.section-offer__bottom-checkmarks
+        VList(listStyle="checkmarks").section-offer__bottom-checkmarks
           li Будут собраны все данные внутри компании
           li Подготовлены критерии потенциального подрядчика
 

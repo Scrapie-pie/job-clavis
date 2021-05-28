@@ -15,6 +15,10 @@
     svgSmileAngry(v-if="name === 'smile-angry'")
     svgBigLogo(v-if="name === 'big-logo-clavis'")
     svgListCheckmark(v-if="name === 'list-checkmark'")
+    svgContentWeb(v-if="name === 'content-web'")
+    svgContentMoney(v-if="name === 'content-money'")
+    svgContentPeople(v-if="name === 'content-people'")
+    svgContentPiece(v-if="name === 'content-piece'")
 </template>
 
 <script>
@@ -33,6 +37,10 @@ import svgSmileAngry from '@/assets/svg/smile-angry.svg'
 import svgSmileNormal from '@/assets/svg/smile-normal.svg'
 import svgBigLogo from '@/assets/svg/big-logo-clavis.svg'
 import svgListCheckmark from '@/assets/svg/list-checkmark.svg'
+import svgContentWeb from '@/assets/svg/content-web.svg'
+import svgContentMoney from '@/assets/svg/content-money.svg'
+import svgContentPeople from '@/assets/svg/content-people.svg'
+import svgContentPiece from '@/assets/svg/content-piece.svg'
 
 export default {
   name: "VIcon",
@@ -51,7 +59,11 @@ export default {
       svgSmileAngry,
       svgSmileNormal,
       svgBigLogo,
-      svgListCheckmark
+      svgListCheckmark,
+      svgContentWeb,
+      svgContentMoney,
+      svgContentPeople,
+      svgContentPiece
   },
   props: {
       name: {
@@ -130,6 +142,22 @@ export default {
     &-list-checkmark {
       width: 11px;
       height: 12px;
+    }
+    &-content-web {
+      width:31px;
+      height:27px;
+    }
+    &-content-money {
+      width: 31px;
+      height: 23px;
+    }
+    &-content-people {
+      width: 31px;
+      height: 29px;
+    }
+    &-content-piece {
+      width: 30px;
+      height: 31px;
     }
   }
 </style>
