@@ -15,14 +15,14 @@ export default {
     },
     methods: {
         gradientTheme() {
-          return (this.theme === 'gradient-reverse') ? 'reverse' : '';
+          return (this.theme === 'gradient-reverse') ? 'reverse' : null;
         }
     },
     computed: {
         gradient() {
           let t = this.theme;
           return (t === 'gradient' || t === 'gradient-reverse') ? 'VGradient' : 'div';
-      }
+        },
     }
 }
 </script>
@@ -31,6 +31,7 @@ export default {
 
   .v-section {
     padding: 110px 0;
+    //background-color: #E5E5E5;
   }
 
   /*.v-section {

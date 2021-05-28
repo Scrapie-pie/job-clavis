@@ -1,31 +1,28 @@
 <template lang="pug">
-  component(:is="tag" :class="`list list_${tag}`")
+  component(:is="tag" :class="`list list_${tag} ${listStyleClass}`")
+
+    //.list__checkmark(v-if="listStyle === 'checkmarks'")
+      VIcon(name="list-checkmark")
+
     slot
+
 </template>
 
 <script>
 export default {
   name: "VList",
   props: {
-    type: String
+    type: String,
+    listStyle: String,
   },
   computed: {
     tag() {
-      return (this.type && this.type === 'ol') ? 'ol' : 'ul';
+      return (this.type === 'ol') ? 'ol' : 'ul';
+    },
+    listStyleClass() {
+      return (this.listStyle === 'checkmarks') ? 'list_checkmarks' : 'list_default';
     }
   },
-  // render(createElement) {
-  //   return createElement(
-  //     'li',
-  //
-  //     this.$slots.default
-  //   );
-  // },
-  methods: {
-    // test() {
-    //   console.log(this.$slots.default)
-    // }
-  }
 }
 </script>
 
@@ -38,16 +35,30 @@ export default {
     margin-left: 20px;
     position: relative;
     &::before {
-      content: '';
       position: absolute;
-      min-width: 6px;
-      min-height: 6px;
-      background-color: currentColor;
       left: -20px;
       top: 50%;
       transform: translateY(-25%);
-      border-radius: 50%;
     }
   }
+  &_default {
+    li {
+      &::before {
+        content: '';
+        min-width: 6px;
+        min-height: 6px;
+        max-width: 6px;
+        max-height: 6px;
+        background-color: currentColor;
+        border-radius: 50%;
+      }
+    }
+  }
+  /*&_checkmarks {
+    li::before {
+      @include make-figure(11);
+      @include checkmark;
+    }
+  }*/
 }
 </style>

@@ -2,14 +2,14 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
   head: {
-    title: 'Управление офисной печатью',
+    title: 'Clavis',
     htmlAttrs: {
       lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Программное обеспечение и устройства для офисной печати' },
+      { hid: 'description', name: 'description', content: 'Первая независимая студия подготовки веб-проектов' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

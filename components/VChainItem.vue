@@ -5,7 +5,7 @@
       VIcon(name="list-flag" v-if="isLast")
 
     .v-chain-item__wrap
-      .h4 {{title}}
+      .h4.v-chain-item__title {{title}}
       .v-chain-item__content
         slot
 
@@ -13,10 +13,12 @@
 
 <script>
 import VIcon from "@/components/VIcon";
+import VGradientBorder from "@/components/VGradientBorder";
 export default {
     name: "VChainItem",
     components: {
-        VIcon
+        VIcon,
+        VGradientBorder
     },
     props: {
         title: String,
@@ -42,52 +44,11 @@ export default {
       bottom: 0;
     }
     padding-bottom: 25px;
+    &__title {
+      font-weight: 700;
+    }
     &__icon {
-      .icon {
-        position: absolute;
-        z-index: 3;
-      }
-
-      min-width: 38px;
-      //width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      //background-color: #fff;
-      z-index: 1;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      $border: 2px;
-      background-clip: padding-box;
-      border: solid $border transparent;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        z-index: -1;
-        margin: -$border;
-        border-radius: inherit;
-        background: linear-gradient(to right, rgb(255, 216, 168), rgb(255,141,165));
-      }
-      &::after {
-        content: '';
-        min-width: 34px;
-        //width: 36px;
-        height: 34px;
-        border-radius: 50%;
-        background-color: #fff;
-        z-index: 2;
-        //position: absolute;
-        //left: 50%;
-        //top: 50%;
-        //transform: translate(-50%, -50%);
-
-        position: relative;
-        display: flex;
-      }
+      @include gradient_border(37px, 37px, 1px, 50%);
     }
   }
 </style>

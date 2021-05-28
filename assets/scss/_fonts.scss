@@ -34,13 +34,19 @@ $fs-other: (
   }
 
   p {
-    line-height: 2em;
-    margin-bottom: 1.5em;
+    line-height: 1.5em;
+    margin-bottom: 1.25em;
+  }
+
+  ul {
+    @include flex_it(column, .25em);
+    line-height: 1.25em;
   }
 
   @each $h, $size in $fs-headers {
     #{$h} {
       @extend %headers;
+      margin-bottom: 1.75em;
       font-weight: 800;
       font-size: #{$size}px;
     }
