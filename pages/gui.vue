@@ -1,5 +1,5 @@
 <template lang="pug">
-  VPageLayout
+  article
     SectionWhy
     SectionWeDo
 
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import VPageLayout from "@/layouts/VPageLayout";
+//import VPageLayout from "@/layouts/VPageLayout";
 // import Vlist from "@/components/Vlist";
 // import VGradientUnderline from "@/components/VGradientUnderline";
 // import VSection from "@/components/VSection";
@@ -39,8 +39,9 @@ import SectionProjects from "@/components/SectionProjects";
 import SectionSendForm from "@/components/SectionSendForm";
 
 export default {
+    layout: "VPageLayout",
     components: {
-        VPageLayout,
+        //VPageLayout,
         // Vlist,
         // VSection,
         // VGradientUnderline,

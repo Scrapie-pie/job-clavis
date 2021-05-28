@@ -6,7 +6,7 @@
       VBanner
 
     main.main
-      slot
+      nuxt
 
     VFooter
 
