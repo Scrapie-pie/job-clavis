@@ -1,8 +1,12 @@
 <template lang="pug">
   form.form
     .form__wrapper
-      input(placeholder="Имя" v-model="name")
-      input(placeholder="Email" v-model="email")
+      ValidationProvider(rules="req" v-slot="v")
+        input(placeholder="Имя" v-model="name")
+        span {{ v.errors[0] }}
+      ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ errors }")
+        input(placeholder="Email" v-model="email")
+        span {{ errors[0] }}
     select
       option Категория
       option веб-сервис / портал / b2b-кабинет

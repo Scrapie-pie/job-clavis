@@ -1,6 +1,6 @@
 <template lang="pug">
   .v-chain-list
-    VChainItem(v-for="(item, index) in list" :isLast="checkLast(index)" :title="item.title") {{item.content}}
+    VChainItem(v-for="(item, index) in list", key="index", :isLast="checkLast(index)", :title="item.title") {{item.content}}
 
 </template>
 

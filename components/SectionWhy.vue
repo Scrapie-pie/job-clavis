@@ -5,7 +5,7 @@
 
       div
         VGradientUnderline: .h4 Если вы планируете создание:
-        Vlist
+        VList
           li веб-сервиса/ портала/ b2b-кабинета;
           li проекта e-com с нестандартными   интеграциями;
           li старт-аппа;
@@ -15,7 +15,7 @@
 
       div
         VGradientUnderline: .h4 Или вам нужно грамотно подготовить проект к тендеру:
-        Vlist
+        VList
           li оформить тендерные документы;
           li подготовить проектные данные;
           li сформировать критерии для участников тендера.
@@ -25,10 +25,12 @@
 
 <script>
 import VSection from "@/components/VSection";
+import VList from "@/components/VList";
 import VGradientUnderline from "@/components/VGradientUnderline";
 export default {
     name: "SectionWhy",
     components: {
+        VList,
         VSection,
         VGradientUnderline
     }
