@@ -1,19 +1,26 @@
 <template lang="pug">
   VSection(theme="gradient").section-projects
     h2 Проекты
-    .section-projects__tabs(@click="onClickTab")
-      .section-projects__tab(v-bind="isActive('ProjectKinogrant')" data-tab="ProjectKinogrant") Киногрант
-      .section-projects__tab(v-bind="isActive('ProjectUtest')" data-tab="ProjectUtest") Utest
-      .section-projects__tab(v-bind="isActive('ProjectLaserBest')" data-tab="ProjectLaserBest") Laser Best
-      .section-projects__tab(v-bind="isActive('ProjectSales')" data-tab="ProjectSales") Sales
+    .section-projects__tabs
+      .section-projects__tab(:class="tabName==='ProjectKinogrant'?'active':''",@click="tabName='ProjectKinogrant'") Киногрант
+      .section-projects__tab(:class="tabName==='ProjectUtest'?'active':''", @click="tabName='ProjectUtest'") Utest
+      .section-projects__tab(:class="tabName==='ProjectLaserBest'?'active':''", @click="tabName='ProjectLaserBest'") Laser Best
+      .section-projects__tab(:class="tabName==='ProjectSales'?'active':''", @click="tabName='ProjectSales'") Sales
 
     .section-projects__wrapper
-      component(:is="currentTab").section-projects__content
+      ProjectKinogrant(v-show="tabName==='ProjectKinogrant'").section-projects__content
+      ProjectUtest(v-show="tabName==='ProjectUtest'").section-projects__content
+      ProjectLaserBest(v-show="tabName==='ProjectLaserBest'").section-projects__content
+      ProjectSales(v-show="tabName==='ProjectSales'").section-projects__content
 
 
 </template>
 
 <script>
+import ProjectKinogrant from "@/components/ProjectKinogrant";
+import ProjectUtest from "@/components/ProjectUtest";
+import ProjectLaserBest from "@/components/ProjectLaserBest";
+import ProjectSales from "@/components/ProjectSales";
 import VSection from "@/components/VSection";
 import VGradientUnderline from "@/components/VGradientUnderline";
 import VIconContent from "@/components/VIconContent";
@@ -21,6 +28,10 @@ import VLink from "@/components/VLink";
 export default {
     name: "SectionProjects",
     components: {
+        ProjectKinogrant,
+        ProjectUtest,
+        ProjectLaserBest,
+        ProjectSales,
         VSection,
         VGradientUnderline,
         VIconContent,
@@ -28,16 +39,11 @@ export default {
     },
     data() {
         return {
-            currentTab: 'ProjectKinogrant'
+            tabName: 'ProjectKinogrant'
         }
     },
     methods: {
-        onClickTab: function(event) {
-            this.currentTab = event.target.dataset.tab
-        },
-        isActive: function(componentName) {
-            return this.currentTab === componentName ? { class: 'active' } : null
-        }
+
     },
     computed: {
 

@@ -1,16 +1,19 @@
 <template lang="pug">
-  component(:is="tag" :class="`list list_${tag} ${listStyleClass}`")
-
+  component(:is="tag" :class="`list list_${tag} ${listStyleClass}`").list
+    li(v-for="(item,index) in $slots.item",:key="index+'item'").list__item
+      VNode(:node="item")
     //.list__checkmark(v-if="listStyle === 'checkmarks'")
       VIcon(name="list-checkmark")
+    //slot
 
-    slot
 
 </template>
 
 <script>
+  import VNode from '@/components/VNode'
 export default {
   name: "VList",
+  components:{VNode},
   props: {
     type: String,
     listStyle: String,
