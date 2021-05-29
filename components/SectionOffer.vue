@@ -5,7 +5,7 @@
       .section-offer__logo
         VIcon(name="big-logo-clavis")
         .h2.section-offer__logo-text Clavis — независимая студия
-      div
+      .section-offer__description-text
         p которая реализует этап предпроектной аналитики.<br>Мы не делаем сам проект (дизайн+верстка+программирование).  
         p Мы готовим все необходимое (проектирование+прототипы+техническое задание),
         p чтобы вы получили справедливую оценку и качественный результат разработки от студий и агентств.   Мы собираем воедино данные и документы, чтобы студиям было проще и быстрее начать ваш проект
@@ -44,6 +44,9 @@ export default {
 <style lang="scss">
   .section-offer {
     &__description {
+      &-text {
+        width: 100%;
+      }
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
@@ -77,6 +80,40 @@ export default {
       }
       &-checkmarks {
         justify-content: center;
+      }
+    }
+
+    @media(max-width: 1024px) {
+      &__description {
+        grid-template-columns: 1fr;
+      }
+      &__logo {
+        align-items: center;
+        &-text {
+          max-width: none;
+        }
+        .icon-big-logo-clavis {
+          width: 40px;
+          height: 70px;
+        }
+      }
+    }
+    @media(max-width: 768px) {
+      &__description {
+        @include flex_it(column, 60px);
+        gap: 0;
+      }
+      &__bottom {
+        gap:0;
+        @include flex_it(column, 10px);
+        &-item {
+          flex-direction: column;
+        }
+        &-title {
+          writing-mode: inherit;
+          transform: none;
+          text-align: left;
+        }
       }
     }
   }

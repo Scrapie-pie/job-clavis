@@ -64,6 +64,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
     padding: 10px;
     margin: 0;
     font-size: 20px;
@@ -79,7 +80,12 @@ export default {
   }
   &__content {
     @include fade-in;
-
+  }
+  @media(max-width: 768px) {
+    &__tab {
+      font-size: 15px;
+      padding: 5px;
+    }
   }
 }
 </style>

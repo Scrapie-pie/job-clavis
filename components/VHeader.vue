@@ -4,7 +4,7 @@
       .header__wrapper
         VLink(href="/" icon="logo").header__logo
 
-        .header__contacts
+        .header__links
           VLink(href="#" target="_blank" theme="default")
             | О нас
           VLink(href="#" target="_blank" theme="default")
@@ -39,17 +39,31 @@ export default {
       padding: $space-vertical 0 $space-horizontal;
       display: grid;
       grid-template-columns: auto 1fr;
-      grid-column-gap: 30px;
+      grid-column-gap: 20px;
       align-items: center;
       width: 100%;
     }
 
-    &__contacts {
+    &__links {
       @include flex_it($distance: 1.8em);
       justify-content: flex-end;
       color: $glob-color-primary;
+      .link {
+        &:hover .link__content {
+          text-shadow: 1px 1px 2px #0000003b;
+        }
+      }
     }
 
-
+    @media(max-width: 1024px) {
+      //display: none;
+      &__links {
+        @include flex_it($distance: 1.25em);
+        font-size: .85em;
+      }
+    }
+    @media(max-width: 768px) {
+      display: none;
+    }
   }
 </style>

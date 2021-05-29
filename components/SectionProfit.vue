@@ -2,7 +2,7 @@
   VSection.section-profit
     h2 Почему это выгодно?
     .section-profit__description
-      img(src="~/assets/img/img-01.png" alt="azure")
+      img(src="~/assets/img/img-01.png" alt="azure").section-profit__img
       .section-profit__list
         VIconContent(icon="content-web")
           p Мы не делаем расчёт, заточенный под конкретного исполнителя, потому что независимы.<br>Это позволяет находить решения, оптимальные именно для Заказчика, а не для студии.
@@ -47,6 +47,20 @@ name: "SectionProfit",
     @include flex_it(column, 50px);
     p {
       margin-bottom: 0;
+    }
+  }
+
+  &__img {
+
+  }
+
+  @media(max-width: 1024px) {
+    &__description {
+      @include flex_it(column, 50px);
+    }
+    &__img {
+      margin: 0 auto;
+      max-width: 75vw;
     }
   }
 }

@@ -10,6 +10,7 @@ $fs-headers: (
 );
 
 $fs-other: (
+  main: 18px,
   small:    15px,
   //small:    14px,
   small-sm: 12px,
@@ -28,7 +29,7 @@ $fs-other: (
 @mixin styleFonts {
   body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: map_get($fs-other, main);
     font-weight: 400;
     color: $glob-color-primary;
   }
@@ -36,6 +37,11 @@ $fs-other: (
   p {
     line-height: 1.25em;
     margin-bottom: 1.25em;
+    font-size: map_get($fs-other, main);
+    word-wrap: break-word;
+    @media(max-width: 768px) {
+      //font-size: map_get($fs-other, main) * .9;
+    }
   }
 
   ul {
@@ -62,4 +68,17 @@ $fs-other: (
       font-weight: 800;
     }
   }
+
+
+  @each $h, $size in $fs-headers {
+    #{$h}, .#{$h} {
+      @media(max-width: 1024px) {
+        font-size: #{$size * .75}px;
+      }
+      //@media(max-width: 768px) {
+      //  font-size: #{$size * .5}px;
+      //}
+    }
+  }
 }
+

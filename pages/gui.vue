@@ -3,8 +3,8 @@
     SectionWhy
     SectionWeDo
 
-    SectionCompetence
-    SectionNow
+    //SectionCompetence
+    //SectionNow
 
     SectionOffer
 

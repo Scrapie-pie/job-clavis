@@ -72,5 +72,22 @@
         border: 1px solid #000;
       }
     }
+    @media(max-width: 768px) {
+      &__description {
+        @include flex_it(column, 30px);
+        &-item {
+          grid-template-columns: 1fr 42px 1fr;
+          grid-column-gap: 30px;
+          //text-align: center;
+          align-items: start;
+        }
+        &-smile {
+          max-width: 42px;
+          max-height: 42px;
+          padding: 0;
+          border: none;
+        }
+      }
+    }
   }
 </style>

@@ -42,7 +42,7 @@ export default {
   &__wrapper {
     //padding-top: 110px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 445px);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-content: space-between;
     gap: 70px 200px;
     .h4 {
@@ -52,6 +52,18 @@ export default {
       margin-bottom: 0;
     }
   }
+  @media(max-width: 768px) {
+    &__wrapper {
+      gap: 40px 200px;
+    }
+  }
+  @media(max-width: 650px) {
+    &__wrapper {
 
+      h2{
+        text-align: center;
+      }
+    }
+  }
 }
 </style>

@@ -35,6 +35,7 @@ export default {
     //@include flex_it($distance: 10px);
 
     &__content {
+      @include trans;
       color: currentColor;
       &:empty { display: none }
     }

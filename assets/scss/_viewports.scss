@@ -9,7 +9,11 @@ $glob-phone-max:      650px;
 $glob-phone-medium:   480px;
 $glob-phone-min:      320px;
 
+$g-phone: $glob-phone-medium;
+$g-desktop: $glob-tablet-max;
+
 @mixin media($min: null, $max: null) {
+
   @if ($min and $max) {
     @media (min-width: #{$min}) and (max-width: #{$max}) {
       @content

@@ -39,7 +39,8 @@
     &__wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-column-gap: 30px;
+      grid-row-gap: 60px;
     }
     &__item {
       text-align: center;
@@ -47,6 +48,7 @@
     &__img {
       margin-bottom: 20px;
       border-radius: 8px;
+      max-width: 100%;
     }
   }
 </style>

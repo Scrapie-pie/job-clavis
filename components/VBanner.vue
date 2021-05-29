@@ -14,15 +14,30 @@ export default {
 </script>
 
 <style lang="scss">
-  .banner {
-    padding-bottom: 220px;
-    padding-top: 15px;
-    &__title {
-      margin-bottom: .5em;
-    }
+.banner {
+  padding-bottom: 220px;
+  padding-top: 15px;
+  &__title {
+    margin-bottom: .5em;
+  }
+  &__wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @media(max-width: 768px) {
+    text-align: center;
+    padding: 100px 0;
     &__wrapper {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding: 0;
+    }
+    &__title {
+      font-size: 44px;
+      margin-bottom: 1em;
+      margin-top: 0;
+    }
+    &__sub-title .h3 {
+      margin-bottom: 0;
     }
   }
+}
 </style>

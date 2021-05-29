@@ -33,6 +33,12 @@ export default {
     background-color: #FFFDF6;
     &__wrapper {
       padding: 90px 0 80px;
+
+    }
+    @media(max-width: 768px) {
+      &__wrapper {
+        padding: 50px 0 40px;
+      }
     }
     //background-color: #E5E5E5;
   }

@@ -1,12 +1,12 @@
 <template lang="pug">
   form.form
     .form__wrapper
-      ValidationProvider(rules="req" v-slot="v")
+      ValidationProvider(rules="req" v-slot="v").form__validator
         input(placeholder="Имя" v-model="name")
-        span {{ v.errors[0] }}
-      ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ errors }")
+        .form__validator-info {{ v.errors[0] }}
+      ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ errors }").form__validator
         input(placeholder="Email" v-model="email")
-        span {{ errors[0] }}
+        .form__validator-info {{ errors[0] }}
     select
       option Категория
       option веб-сервис / портал / b2b-кабинет
@@ -58,6 +58,20 @@ export default {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       justify-content: space-between;
       gap: 10px 75px;
+    }
+
+    &__validator {
+      position: relative;
+      input {
+        width: 100%;
+      }
+      &-info {
+        position: absolute;
+        bottom: calc(100% - 1px);
+        font-size: 11px;
+        padding: 0 5px;
+        color: #ff5757;
+      }
     }
 
     input[type="submit"] {

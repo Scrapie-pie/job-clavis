@@ -19,7 +19,7 @@ Object.keys(rules).forEach(rule => {
 // Add a rule.
 extend('req', {
   validate: value => value.length>1,
-  message: 'Поле обязательно для заполнения!!!!!!'
+  message: 'Поле обязательно для заполнения'
 });
 
 

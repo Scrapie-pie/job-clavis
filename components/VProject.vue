@@ -20,6 +20,9 @@
 
 <style lang="scss">
   .v-project {
+    img {
+      width: 100%;
+    }
     text-align: center;
     font-size: 15px;
     margin: 0 auto;
@@ -38,5 +41,6 @@
         border-bottom-color: transparent;
       }
     }
+
   }
 </style>

@@ -64,7 +64,7 @@ export default {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-    gap: 20px;
+    gap: 40px;
     &-item {
       margin: 0 auto;
       width: 215px;
