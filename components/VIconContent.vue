@@ -26,9 +26,9 @@ export default {
 
 <style lang="scss">
   .v-icon-content {
-    @include flex_it(row, 20px);
+    @include flex_it(row, 15px);
     &__icon {
-      @include gradient_border(63px, 63px, 1px, 50%);
+      @include gradient_border(70px, 70px, 1px, 50%);
     }
   }
 </style>

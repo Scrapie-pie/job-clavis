@@ -30,8 +30,9 @@ export default {
 <style lang="scss">
 
   .v-section {
+    background-color: #FFFDF6;
     &__wrapper {
-      padding: 110px 0;
+      padding: 90px 0 80px;
     }
     //background-color: #E5E5E5;
   }

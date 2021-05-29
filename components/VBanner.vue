@@ -1,10 +1,10 @@
 <template lang="pug">
   section.banner
     .container
-      .banner__title
-        h1 Подбираем ключ к вашему проекту
-      .banner__sub-title
-        .h3 Первая независимая студия<br>подготовки веб-проектов
+      .banner__wrapper
+        h1.banner__title Подбираем ключ к вашему проекту
+        .banner__sub-title
+          .h3 Первая независимая студия<br>подготовки веб-проектов
 </template>
 
 <script>
@@ -15,7 +15,14 @@ export default {
 
 <style lang="scss">
   .banner {
-    padding-bottom: 230px;
-    padding-top: 110px;
+    padding-bottom: 220px;
+    padding-top: 15px;
+    &__title {
+      margin-bottom: .5em;
+    }
+    &__wrapper {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
   }
 </style>

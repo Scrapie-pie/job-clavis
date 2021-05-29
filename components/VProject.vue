@@ -1,7 +1,8 @@
 <template lang="pug">
   .v-project
-    slot(name="description")
-    VLink(href="#" theme="default").v-project__view-prototype Смотреть прототип
+    .v-project__description
+      slot(name="description")
+      VLink(href="#" theme="default").v-project__view-prototype Смотреть прототип
     slot(name="preview")
 
 </template>
@@ -20,6 +21,15 @@
 <style lang="scss">
   .v-project {
     text-align: center;
+    font-size: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__description {
+      max-width: 750px;
+      text-align: center;
+    }
     &__view-prototype {
       border-bottom: 1px solid currentColor;
       margin-bottom: 75px;

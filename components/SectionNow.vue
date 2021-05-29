@@ -56,6 +56,7 @@
         .h4 {
           padding-bottom: 5px;
           text-align: center;
+          font-weight: 700;
           @include gradient_underline(155px)
         }
       }

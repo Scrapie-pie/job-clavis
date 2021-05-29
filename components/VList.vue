@@ -4,7 +4,7 @@
       VNode(:node="item")
     //.list__checkmark(v-if="listStyle === 'checkmarks'")
       VIcon(name="list-checkmark")
-    //slot
+    slot
 
 
 </template>

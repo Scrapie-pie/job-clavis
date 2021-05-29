@@ -36,6 +36,7 @@ export default {
     flex-direction: column;
     height: 100vh;
     position: relative;
+    background-color: #FFFDF6;
   }
 
   .container {

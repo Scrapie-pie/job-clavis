@@ -60,7 +60,7 @@ export default {
     gap: 30px;
   }
   &__badges {
-    margin: 80px 0 0;
+    margin: 50px 0;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));

@@ -48,7 +48,7 @@ export default {
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: center;
-      margin-bottom: 100px;
+      margin-bottom: 60px;
     }
     &__logo {
       @include flex_it(row, 20px);
