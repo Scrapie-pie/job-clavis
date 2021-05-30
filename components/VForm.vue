@@ -1,6 +1,11 @@
 <template lang="pug">
   ValidationObserver( v-slot="{ handleSubmit }")
-    form.form(@submit.prevent="handleSubmit(onSubmit)")
+    form(name="request" netlify netlify-honeypot="bot-field" hidden)
+      input(type="text" name="name")
+      input(type="text" name="phone")
+      input(type="text" name="message")
+      input(type="text" name="email")
+    form.form(@submit.prevent="handleSubmit(onSubmit)" v-if="!isSend")
       .form__wrapper
         .form__validator
           input(placeholder="Имя" v-model="name")
@@ -15,11 +20,21 @@
         option Другое
       textarea.form__textarea(v-model="message" placeholder="Раскажите о своем проекте")
       input(type="submit").form__submit
+    h4(v-else) Заявка отправлена. Мы с вами скоро свяжемся.
 
 </template>
 
 <script>
   //import VGradient from "./VGradient";
+
+  const stateModel = () => {
+    return {
+      name: null,
+      email: null,
+      category: null,
+      message: null,
+    }
+  }
 
 export default {
   name: "VForm",
@@ -28,18 +43,38 @@ export default {
   },
   data() {
       return {
-          name: null,
-          email: null,
-          category: null,
-          message: null,
+        isSend:false,
+        model:stateModel()
+
       }
   },
-    methods: {
-        onSubmit () {
-            console.log(this.name,this.email,this.category,this.message)
-            alert('Form has been submitted!');
-        }
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    async onSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+        baseURL: window.origin,
+      };
+      this.$axios.post(
+        "/",
+        this.encode({
+          "form-name": "request",
+          ...this.model
+        }),
+        axiosConfig
+      ).then(()=>{
+        this.isSend = true
+        this.model= stateModel()
+      });
+
     }
+  }
 }
 </script>
 
