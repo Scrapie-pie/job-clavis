@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss">
   .footer {
+    background-color: $glob-color-bg;
     margin-top: 55px;
     display: flex;
     align-items: center;

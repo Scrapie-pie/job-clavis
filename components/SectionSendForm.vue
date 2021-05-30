@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection.section-send-form
+  VSection.section-send-form(id="section-send-form")
     h2 Обсудить проект
     .section-send-form__wrapper
 

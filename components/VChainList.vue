@@ -11,8 +11,19 @@ export default {
     components: {
         VChainItem
     },
+    data() {
+        return {
+            list: [
+                {title: 'Слушаем', content: 'Берём все ваши идеи'},
+                {title: 'Думаем', content: 'Менеджерим процесс'},
+                {title: 'Анализируем', content: 'Собираем воедино'},
+                {title: 'Оформляем', content: 'Отдаём базис проекта'},
+                {title: 'Результат', content: 'Мы собираем воедино данные и документы, чтобы студиям было проще и быстрее начать ваш проект'},
+            ]
+        }
+    },
     props: {
-        list: { type: Array, required: true }
+        //list: { type: Array, required: true }
     },
     methods: {
         checkLast(index) {

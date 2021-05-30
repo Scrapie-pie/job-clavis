@@ -26,7 +26,7 @@ export default {
   }
   @media(max-width: 768px) {
     text-align: center;
-    padding: 100px 0;
+    padding: 10px 0 100px;
     &__wrapper {
       padding: 0;
     }

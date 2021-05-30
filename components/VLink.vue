@@ -30,28 +30,46 @@ export default {
 </script>
 
 <style lang="scss">
-  .link {
+.link {
+  @include trans;
+  //@include flex_it($distance: 10px);
+
+  &__content {
     @include trans;
-    //@include flex_it($distance: 10px);
+    color: currentColor;
+    &:empty { display: none }
 
-    &__content {
+    &::before {
+      content: '';
+      height: 1px;
+      width: 0;
+      background: linear-gradient(120deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
+      bottom: -2px;
+      display: block;
+      position: absolute;
       @include trans;
-      color: currentColor;
-      &:empty { display: none }
     }
 
-    &_gradient {
-      background: -webkit-linear-gradient(300deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-
-      //&:hover {
-      //  background: -webkit-linear-gradient(100deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
-      //  -webkit-background-clip: text;
-      //  -webkit-text-fill-color: transparent;
-      //}
-    }
 
   }
+
+  &_gradient {
+    background: -webkit-linear-gradient(300deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+
+    &:hover .link__content::before {
+      width: 100%;
+    }
+
+    //&:hover {
+    //  background: -webkit-linear-gradient(100deg, rgba(255, 226, 159, 0.9) 0%, rgba(255, 169, 159, 0.9) 56.16%, rgba(255, 113, 154, 0.9) 100%);
+    //  -webkit-background-clip: text;
+    //  -webkit-text-fill-color: transparent;
+    //}
+  }
+
+}
 </style>

@@ -4,9 +4,8 @@
       ValidationProvider(rules="req" v-slot="v").form__validator
         input(placeholder="Имя" v-model="name")
         .form__validator-info {{ v.errors[0] }}
-      ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ errors }").form__validator
+      ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ classes }").form__validator
         input(placeholder="Email" v-model="email")
-        .form__validator-info {{ errors[0] }}
     select
       option Категория
       option веб-сервис / портал / b2b-кабинет
@@ -85,6 +84,13 @@ export default {
       border-radius: 6px;
       height: 48px;
       margin-top: 10px;
+      //@include trans;
+      transition: .25s ease-out;
+      &:hover {
+        box-shadow: inset 0 0 10px #ffffff87;
+        //background-color: #e4ff00;
+        //transform: scale(1.05);
+      }
     }
 
     select {

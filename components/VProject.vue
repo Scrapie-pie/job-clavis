@@ -2,7 +2,7 @@
   .v-project
     .v-project__description
       slot(name="description")
-      VLink(href="#" theme="default").v-project__view-prototype Смотреть прототип
+      VLink(:href="href" theme="default" target="_blank").v-project__view-prototype Смотреть прототип
     slot(name="preview")
 
 </template>
@@ -14,7 +14,12 @@
         components: {
             VLink
         },
-
+        props: {
+            href: {
+                type: String,
+                required: true
+            }
+        }
     }
 </script>
 

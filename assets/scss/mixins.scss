@@ -70,22 +70,15 @@
   }
   &::after {
     content: '';
+    position: relative;
+    display: flex;
     min-width: calc(100% - #{$border_width + 1px});
     width: calc(100% - #{$border_width + 1px});
-    //width: 36px;
     height: calc(100% - #{$border_width + 1px});
+    background-color: $glob-color-bg;
     @if ($border_radius) {
       border-radius: #{$border_radius};
     }
-    background-color: #fff;
-    z-index: 2;
-    //position: absolute;
-    //left: 50%;
-    //top: 50%;
-    //transform: translate(-50%, -50%);
-
-    position: relative;
-    display: flex;
   }
 }
 

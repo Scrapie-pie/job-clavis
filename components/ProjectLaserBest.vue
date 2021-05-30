@@ -1,5 +1,5 @@
 <template lang="pug">
-  VProject.project-laser-best
+  VProject(href="https://www.figma.com/file/tzmplUNIkybViviU5jVclq/Laser-Best?node-id=0%3A1").project-laser-best
     template(v-slot:description)
       p Система автоматизации косметологической клиники  
     template(v-slot:preview)

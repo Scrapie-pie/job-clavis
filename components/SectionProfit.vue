@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection.section-profit
+  VSection.section-profit(id="section-profit")
     h2 Почему это выгодно?
     .section-profit__description
       img(src="~/assets/img/img-01.png" alt="azure").section-profit__img

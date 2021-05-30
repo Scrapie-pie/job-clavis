@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection.section-competence
+  VSection.section-competence(id="section-competence")
     h2 Наши компетенции
     .section-competence__list
       VIconContent(icon="content-window")

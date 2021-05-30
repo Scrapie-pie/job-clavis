@@ -23,10 +23,25 @@ $fs-other: (
   font-style: normal;
   margin-bottom: .45em;
   margin-top: 0;
-  color: $glob-color-primary;
+  //color: $glob-color-primary;
+
+
+}
+
+@mixin hGradient {
+  background: -webkit-linear-gradient(269deg, #485563 35%, #29323C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: .25em;
+  margin-bottom: .20em;
 }
 
 @mixin styleFonts {
+
+  h2, .h2 {
+    @include hGradient;
+  }
+
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: map_get($fs-other, main);
@@ -54,7 +69,8 @@ $fs-other: (
   @each $h, $size in $fs-headers {
     #{$h} {
       @extend %headers;
-      margin-bottom: 1.75em;
+      margin-bottom: 1.25em;
+      padding-bottom: .5em;
       font-weight: 800;
       font-size: #{$size}px;
     }

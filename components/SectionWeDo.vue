@@ -1,16 +1,8 @@
 <template lang="pug">
-  VSection(theme="gradient-reverse").section-we-do
+  VSection(theme="gradient-reverse" id="section-we-do").section-we-do
     h2 Что мы делаем?
     .section-we-do__wrapper
-      VChainList(
-        :list="[\
-            {title: 'Слушаем', content: 'Берём все ваши идеи'},\
-            {title: 'Думаем', content: 'Менеджерим процесс'},\
-            {title: 'Анализируем', content: 'Собираем воедино'},\
-            {title: 'Оформляем', content: 'Отдаём базис проекта'},\
-            {title: 'Результат', content: 'Мы собираем воедино данные и документы, чтобы студиям было проще и быстрее начать ваш проект'},\
-          ]"
-      )
+      VChainList
       img(src="~/assets/img/img01.png" alt="Что мы делаем?").section-we-do__img
 
 </template>

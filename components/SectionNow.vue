@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection.section-now
+  VSection.section-now(id="section-now")
     h2 Как это бывает сейчас
     .section-now__description
       .section-now__description-item
@@ -57,7 +57,8 @@
           padding-bottom: 5px;
           text-align: center;
           font-weight: 700;
-          @include gradient_underline(155px)
+          @include gradient_underline(155px);
+          @include hGradient;
         }
       }
       &-smile {
@@ -86,6 +87,7 @@
           max-height: 42px;
           padding: 0;
           border: none;
+          //display: none;
         }
       }
     }

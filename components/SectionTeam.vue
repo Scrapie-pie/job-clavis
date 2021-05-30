@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection.section-team
+  VSection.section-team(id="section-team")
     h2 Наша команда
     .section-team__wrapper
       .section-team__item

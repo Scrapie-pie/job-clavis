@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection(theme="gradient").section-projects
+  VSection(theme="gradient" id="section-projects").section-projects
     h2 Проекты
     .section-projects__tabs
       .section-projects__tab(:class="tabName==='ProjectKinogrant'?'active':''",@click="tabName='ProjectKinogrant'") Киногрант
@@ -60,6 +60,7 @@ export default {
     margin-bottom: 70px;
   }
   &__tab {
+    @include hGradient;
     width: 140px;
     display: flex;
     align-items: center;

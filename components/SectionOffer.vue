@@ -1,5 +1,5 @@
 <template lang="pug">
-  VSection(theme="gradient-reverse").section-offer
+  VSection(theme="gradient-reverse" id="section-offer").section-offer
     h2 Наше предложение
     .section-offer__description
       .section-offer__logo
@@ -58,7 +58,7 @@ export default {
       &-text {
         max-width: 350px;
         margin-bottom: 0;
-        font-weight: 800;
+        font-weight: 800 !important;
       }
     }
 

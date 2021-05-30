@@ -6,6 +6,10 @@
   body {
     height: 100%;
   }
+
+  body {
+    background-color: $glob-color-bg;
+  }
   //.page {
   //  display: flex;
   //  flex-direction: column;

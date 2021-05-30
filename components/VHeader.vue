@@ -4,17 +4,12 @@
       .header__wrapper
         VLink(href="/" icon="logo").header__logo
 
-        .header__links
-          VLink(href="#" target="_blank" theme="default")
-            | О нас
-          VLink(href="#" target="_blank" theme="default")
-            | Компетенции
-          VLink(href="#" target="_blank" theme="default")
-            | Наше предложение
-          VLink(href="#" target="_blank" theme="default")
-            | Проекты
-          VLink(href="#" target="_blank" theme="default")
-            | Обсудить проект
+        .header__links(@click="toAnchor")
+          .header__links-item(data-anchor="section-why") О нас
+          .header__links-item(data-anchor="section-competence") Компетенции
+          .header__links-item(data-anchor="section-offer") Наше предложение
+          .header__links-item(data-anchor="section-projects") Проекты
+          .header__links-item(data-anchor="section-send-form") Обсудить проект
 
 </template>
 
@@ -24,6 +19,18 @@ export default {
   name: "VHeader",
   components: {
       VLink,
+  },
+  methods: {
+    toAnchor(e) {
+      let id = e.target.dataset.anchor;
+      if (id) {
+        try {
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth', top: true });
+        } catch (e) {
+          return;
+        }
+      }
+    }
   }
 }
 </script>
@@ -48,8 +55,10 @@ export default {
       @include flex_it($distance: 1.8em);
       justify-content: flex-end;
       color: $glob-color-primary;
-      .link {
-        &:hover .link__content {
+      &-item {
+        @include trans;
+        cursor: pointer;
+        &:hover {
           text-shadow: 1px 1px 2px #0000003b;
         }
       }
@@ -63,7 +72,13 @@ export default {
       }
     }
     @media(max-width: 768px) {
-      display: none;
+      &__links {
+        display: none;
+      }
+      &__logo .icon-logo {
+        /*width: 128px;*/
+        /*height: 65px;*/
+      }
     }
   }
 </style>
