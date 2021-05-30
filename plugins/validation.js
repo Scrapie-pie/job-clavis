@@ -25,5 +25,5 @@ extend('req', {
 
 
 // Install components globally
-//Vue.component('ValidationObserver', ValidationObserver);
+Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);

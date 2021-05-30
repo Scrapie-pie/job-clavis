@@ -1,20 +1,20 @@
 <template lang="pug">
-  form.form
-    .form__wrapper
-      ValidationProvider(rules="req" v-slot="v").form__validator
-        input(placeholder="Имя" v-model="name")
-        .form__validator-info {{ v.errors[0] }}
-      ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ classes }").form__validator
-        input(placeholder="Email" v-model="email")
-    select
-      option Категория
-      option веб-сервис / портал / b2b-кабинет
-      option Проект e-com
-      option Старт-апп
-      option Тендер
-      option Другое
-    textarea.form__textarea(placeholder="Раскажите о своем проекте")
-    input(type="submit").form__submit
+  ValidationObserver( v-slot="{ handleSubmit }")
+    form.form(@submit.prevent="handleSubmit(onSubmit)")
+      .form__wrapper
+        .form__validator
+          input(placeholder="Имя" v-model="name")
+        ValidationProvider(name="Email", :rules="{ required: true, email: true }" v-slot="{ classes, invalid, validated }").form__validator
+          input(placeholder="Email *" v-model="email" :class="{error:(invalid && validated)}")
+      select(v-model="category")
+        option Категория
+        option веб-сервис / портал / b2b-кабинет
+        option Проект e-com
+        option Старт-апп
+        option Тендер
+        option Другое
+      textarea.form__textarea(v-model="message" placeholder="Раскажите о своем проекте")
+      input(type="submit").form__submit
 
 </template>
 
@@ -28,10 +28,18 @@ export default {
   },
   data() {
       return {
-          name: "",
-          email: "",
+          name: null,
+          email: null,
+          category: null,
+          message: null,
       }
-  }
+  },
+    methods: {
+        onSubmit () {
+            console.log(this.name,this.email,this.category,this.message)
+            alert('Form has been submitted!');
+        }
+    }
 }
 </script>
 
@@ -63,6 +71,9 @@ export default {
       position: relative;
       input {
         width: 100%;
+        &.error {
+          border-color: #ff5757;
+        }
       }
       &-info {
         position: absolute;
@@ -91,6 +102,7 @@ export default {
         //background-color: #e4ff00;
         //transform: scale(1.05);
       }
+
     }
 
     select {
