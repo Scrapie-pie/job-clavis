@@ -8,7 +8,7 @@
 
           .footer__address 5810 Hackett Plain Suite 705 Palo Alto, CA
 
-          VFaSocials
+          // VFaSocials
 
 </template>
 
