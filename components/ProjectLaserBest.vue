@@ -1,7 +1,7 @@
 <template lang="pug">
   VProject(href="https://www.figma.com/file/tzmplUNIkybViviU5jVclq/Laser-Best?node-id=0%3A1").project-laser-best
     template(v-slot:description)
-      p Система автоматизации косметологической клиники  
+      p Система автоматизации косметологической клиники
     template(v-slot:preview)
       img(src="~/assets/img/projects/laser-best-01.png" alt="киногрант")
 </template>
