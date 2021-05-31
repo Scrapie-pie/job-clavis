@@ -2,7 +2,7 @@
   ValidationObserver( v-slot="{ handleSubmit }")
     form(name="request" netlify netlify-honeypot="bot-field" hidden)
       input(type="text" name="name")
-      input(type="text" name="phone")
+      input(type="text" name="category")
       input(type="text" name="message")
       input(type="text" name="email")
     form.form(@submit.prevent="handleSubmit(onSubmit)" v-if="!isSend")
