@@ -60,7 +60,7 @@ export default {
     margin-bottom: 70px;
   }
   &__tab {
-    @include hGradient;
+    // @include hGradient;
     width: 140px;
     display: flex;
     align-items: center;
