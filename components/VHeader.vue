@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header
+  header.header.header_fixed
     .container
       .header__wrapper
         VLink(href="/" icon="logo").header__logo
@@ -30,8 +30,9 @@ export default {
           return;
         }
       }
-    }
-  }
+    },
+  },
+
 }
 </script>
 
@@ -42,8 +43,22 @@ export default {
     $svg-color:  $glob-color-svg;
     $link-color: $glob-color-link;
 
+
+    &_fixed {
+      @media(min-width: 768px) {
+        position: sticky;
+        top: 0;
+        background-color: $glob-color-bg;
+      }
+      width: 100%;
+      z-index: 50;
+    }
+
+
+    //@include bg-gradient(107);
+
     &__wrapper {
-      padding: $space-vertical 0 $space-horizontal;
+      padding: $space-vertical 0;
       display: grid;
       grid-template-columns: auto 1fr;
       grid-column-gap: 20px;

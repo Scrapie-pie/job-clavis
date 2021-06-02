@@ -9,7 +9,9 @@
           template(slot="item") веб-сервиса/ портала/ b2b-кабинета;
           template(slot="item") проекта e-com с нестандартными   интеграциями;
           template(slot="item") старт-аппа;
-          template(slot="item") чего-то вот такого как у них, только круче
+          template(slot="item"): div
+            | чего-то вот такого как у них, только круче
+            VIcon(name="inline-smile")
 
       p Clavis — молодая команда с большим опытом на рынке веб-разработки. Мы собрались, чтобы сделать легче жизнь тем, кто планирует сложный проект, но не знает с чего начать.
 
@@ -27,12 +29,14 @@
 import VSection from "@/components/VSection";
 import VList from "@/components/VList";
 import VGradientUnderline from "@/components/VGradientUnderline";
+import VIcon from "@/components/VIcon";
 export default {
     name: "SectionWhy",
     components: {
         VList,
         VSection,
-        VGradientUnderline
+        VGradientUnderline,
+        VIcon
     }
 }
 </script>

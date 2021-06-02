@@ -19,6 +19,7 @@
     svgContentMoney(v-if="name === 'content-money'")
     svgContentPeople(v-if="name === 'content-people'")
     svgContentPiece(v-if="name === 'content-piece'")
+    inlineSmile(v-if="name === 'inline-smile'")
 </template>
 
 <script>
@@ -41,6 +42,7 @@ import svgContentWeb from '@/assets/svg/content-web.svg'
 import svgContentMoney from '@/assets/svg/content-money.svg'
 import svgContentPeople from '@/assets/svg/content-people.svg'
 import svgContentPiece from '@/assets/svg/content-piece.svg'
+import inlineSmile from '@/assets/svg/inline-smile.svg'
 
 export default {
   name: "VIcon",
@@ -63,7 +65,8 @@ export default {
       svgContentWeb,
       svgContentMoney,
       svgContentPeople,
-      svgContentPiece
+      svgContentPiece,
+      inlineSmile
   },
   props: {
       name: {
@@ -158,6 +161,13 @@ export default {
     &-content-piece {
       width: 30px;
       height: 31px;
+    }
+    &-inline-smile {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
     }
   }
 </style>

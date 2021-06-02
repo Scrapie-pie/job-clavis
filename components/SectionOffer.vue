@@ -93,8 +93,8 @@ export default {
           max-width: none;
         }
         .icon-big-logo-clavis {
-          width: 40px;
-          height: 70px;
+          min-width: 60px;
+          min-height: 90px;
         }
       }
     }
@@ -113,6 +113,13 @@ export default {
           writing-mode: inherit;
           transform: none;
           text-align: left;
+        }
+      }
+    }
+    @media(max-width: 420px) {
+      .section-offer {
+        &__logo-text {
+          font-size: 28px;
         }
       }
     }

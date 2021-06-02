@@ -6,7 +6,7 @@
           VLink(href="mailto:info@clavis.ru" target="_blank")
             | info@clavis.ru
 
-          .footer__address 5810 Hackett Plain Suite 705 Palo Alto, CA
+          .footer__address Clavis 2021
 
           // VFaSocials
 

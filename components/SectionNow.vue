@@ -1,7 +1,7 @@
 <template lang="pug">
   VSection.section-now(id="section-now")
     h2 Как это бывает сейчас
-    .section-now__description
+    .section-now__description.section-now__desktop
       .section-now__description-item
         .h4 Клиент
         br
@@ -20,6 +20,23 @@
         span
           |Специалистам нужно погружаться в текущее состояние проекта, или изучать проектную документацию на +50 страниц, или вообще проектировать на этапе оценки.<br>
           |При этом есть вероятность, что тендер будет выигран другой студией и время специалистов потрачено впустую.
+
+    .section-now__description.section-now__mobile
+      div
+        VGradientUnderline: .h4 Клиент
+        ul
+          li Клиент приходит в веб-студию/ агентство за разработкой сложного проекта.
+          li На входе мало данных для детального расчёта реализации.
+          li Клиент получает завышенную оценку или долгий процесс разработки, разбитый по этапам без фиксированного срока и стоимости.
+      div
+        VGradientUnderline: .h4 Веб-студия/агентство
+        ul
+         li Расчётом проектов в студиях занимаются менеджеры. Менеджерская оценка часто бывает неточной и завышенной.
+         li Программисты, UX/UI-аналитики заняты на проектах и не всегда могут подключиться к проработке запроса от клиента.
+         li
+          |Специалистам нужно погружаться в текущее состояние проекта, или изучать проектную документацию на +50 страниц, или вообще проектировать на этапе оценки.<br>
+          |При этом есть вероятность, что тендер будет выигран другой студией и время специалистов потрачено впустую.
+
 
 
 </template>
@@ -73,8 +90,25 @@
         border: 1px solid #000;
       }
     }
+
+    &__mobile {
+      .gradient-underline {
+        text-align: center;
+        margin-bottom: 1.5em;
+      }
+      ul {
+        @include flex_it(column, 15px);
+      }
+      .h4 {
+        padding-bottom: 5px;
+        text-align: center;
+        font-weight: 700;
+        @include gradient_underline(100%);
+        @include hGradient;
+      }
+    }
     @media(max-width: 768px) {
-      &__description {
+      /*&__description {
         @include flex_it(column, 30px);
         &-item {
           grid-template-columns: 1fr 42px 1fr;
@@ -89,6 +123,17 @@
           border: none;
           //display: none;
         }
+      }*/
+      .section-now__desktop {
+        display: none;
+      }
+      .section-now__mobile {
+
+      }
+    }
+    @media(min-width: 768px) {
+      .section-now__mobile {
+        display: none;
       }
     }
   }

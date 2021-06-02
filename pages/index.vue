@@ -1,21 +1,22 @@
 <template lang="pug">
   .page
-    VGradient
-      VHeader
-      VBanner
+    //VGradient
+
 
     main.main
+      VHeader
+      VGradient: VBanner
       SectionWhy
       SectionWeDo
       SectionCompetence
-      SectionNow
+      //SectionNow
       SectionOffer
       SectionProfit
       SectionTeam
       SectionProjects
       SectionSendForm
+      VFooter
 
-    VFooter
 </template>
 
 <script>
@@ -52,7 +53,7 @@ export default {
         VFooter,
         VBanner,
         VGradient
-    }
+    },
 }
 </script>
 
