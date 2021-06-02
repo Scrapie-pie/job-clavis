@@ -9,7 +9,7 @@
       SectionWhy
       SectionWeDo
       SectionCompetence
-      //SectionNow
+      SectionNow
       SectionOffer
       SectionProfit
       SectionTeam

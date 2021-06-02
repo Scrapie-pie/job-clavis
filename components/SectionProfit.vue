@@ -39,7 +39,7 @@ name: "SectionProfit",
   }
   &__description {
     display: grid;
-    grid-template-columns: auto minmax(390px, 1fr);
+    grid-template-columns: auto minmax(300px, 1fr);
     grid-column-gap: 90px;
     //margin-bottom: 70px;
   }
