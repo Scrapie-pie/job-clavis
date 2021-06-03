@@ -54,6 +54,9 @@ export default {
         VBanner,
         VGradient
     },
+    methods: {
+
+    }
 }
 </script>
 

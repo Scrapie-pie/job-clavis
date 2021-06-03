@@ -50,6 +50,12 @@ export default {
         top: 0;
         background-color: $glob-color-bg;
       }
+      @media(max-width: 768px) {
+        position: absolute;
+        & + * {
+          padding-top: 150px;
+        }
+      }
       width: 100%;
       z-index: 50;
     }

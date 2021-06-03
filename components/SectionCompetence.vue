@@ -10,8 +10,15 @@
           li погружение в задачи проекта,
           li проработка пользовательских сценариев.
 
-        VLink(href="#" target="_blank")
-          | Подробнее...
+        VDrop
+          template(v-slot:main) Подробнее...
+          template(v-slot:drop)
+            p На основе данных формируем mind map:
+            Vlist
+              template(v-slot:item) систематизируем вводные данные по проекту;
+              template(v-slot:item) формируем карту проекта.  
+            p На основе данных брифинга и структуры реализуем прототипы ключевых разделов сайта/ проекта. После согласования и обсуждения финализируем прототипы во всех состояниях.
+
 
       VIconContent(icon="content-document")
         .h4 Техническая документация проекта
@@ -38,13 +45,17 @@ import VSection from "@/components/VSection";
 import VGradientUnderline from "@/components/VGradientUnderline";
 import VIconContent from "@/components/VIconContent";
 import VLink from "@/components/VLink";
+import VDrop from "@/components/VDrop";
+import Vlist from "@/components/Vlist";
 export default {
     name: "SectionCompetence",
     components: {
         VSection,
         VGradientUnderline,
         VIconContent,
-        VLink
+        VLink,
+        VDrop,
+        Vlist
     }
 }
 </script>
