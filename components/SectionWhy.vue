@@ -6,10 +6,10 @@
       div
         VGradientUnderline: .h4 Если вы планируете создание:
         VList
-          template(slot="item") веб-сервиса/ портала/ b2b-кабинета;
-          template(slot="item") проекта e-com с нестандартными   интеграциями;
-          template(slot="item") старт-аппа;
-          template(slot="item"): div
+          template(v-slot:item) веб-сервиса/ портала/ b2b-кабинета;
+          template(v-slot:item) проекта e-com с нестандартными   интеграциями;
+          template(v-slot:item) старт-аппа;
+          template(v-slot:item): div
             | чего-то вот такого как у них, только круче
             VIcon(name="inline-smile")
 
@@ -18,9 +18,9 @@
       div
         VGradientUnderline: .h4 Или вам нужно грамотно подготовить проект к тендеру:
         VList
-          template(slot="item") оформить тендерные документы;
-          template(slot="item") подготовить проектные данные;
-          template(slot="item") сформировать критерии для участников тендера.
+          template(v-slot:item) оформить тендерные документы;
+          template(v-slot:item) подготовить проектные данные;
+          template(v-slot:item) сформировать критерии для участников тендера.
 
 
 </template>
@@ -49,6 +49,9 @@ export default {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-content: space-between;
     gap: 70px 200px;
+    p {
+      line-height: 1.5em;
+    }
     .h4 {
       @include gradient_underline(100%);
     }

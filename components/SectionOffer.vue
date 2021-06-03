@@ -14,14 +14,14 @@
       .section-offer__bottom-item
         .h4.section-offer__bottom-title Сложные проекты
         VList(listStyle="checkmarks").section-offer__bottom-checkmarks
-          template(slot="item") На основе структуры и прототипов можно рассчитать объем работ по дизайну и вёрстке
-          template(slot="item") На основе подробного ТЗ можно сделать расчёт программирования / технической реализации проекта.
+          template(v-slot:item) На основе структуры и прототипов можно рассчитать объем работ по дизайну и вёрстке
+          template(v-slot:item) На основе подробного ТЗ можно сделать расчёт программирования / технической реализации проекта.
 
       .section-offer__bottom-item
         .h4.section-offer__bottom-title Для тендера
         VList(listStyle="checkmarks").section-offer__bottom-checkmarks
-          template(slot="item") Будут собраны все данные внутри компании
-          template(slot="item") Подготовлены критерии потенциального подрядчика
+          template(v-slot:item) Будут собраны все данные внутри компании
+          template(v-slot:item) Подготовлены критерии потенциального подрядчика
 
 </template>
 
