@@ -59,20 +59,25 @@
 
 <style lang="scss">
   .fade-enter-active, .fade-leave-active {
-    max-height: 4000px;
-    overflow: hidden;
-    transition-property: max-height, opacity;
-    transition: max-height .3s, opacity .2s ease-out;
+    transition: opacity .2s ease-out;
     opacity: 1;
-
+    @media(max-width: 767px) {
+      max-height: 4000px;
+      overflow: hidden;
+      transition: max-height .3s, opacity .2s ease-out;
+    }
   }
 
   .fade-enter-active {
-    transition: max-height 1s, opacity .27s ease-in;
+    @media(max-width: 767px) {
+      transition: max-height 1s, opacity .27s ease-in;
+    }
   }
 
   .fade-enter, .fade-leave-to {
-    max-height: 0;
+    @media(max-width: 767px) {
+      max-height: 0;
+    }
     opacity: 0;
   }
 
@@ -142,7 +147,7 @@
 
     }
 
-    @media(max-width: 500px) {
+    @media(max-width: 767px) {
       position: inherit;
       &__dropped {
         position: relative;
