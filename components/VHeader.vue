@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header.header_fixed
+  header.header.header_fixed(ref="header")
     .container
       .header__wrapper
         VLink(href="/" icon="logo").header__logo
@@ -20,18 +20,31 @@ export default {
   components: {
       VLink,
   },
+  data(){
+    return {
+      headerHeight:0
+    }
+  },
   methods: {
     toAnchor(e) {
       let id = e.target.dataset.anchor;
       if (id) {
         try {
-          document.getElementById(id).scrollIntoView({ behavior: 'smooth', top: true });
+          const yOffset = - this.headerHeight;
+          const element = document.getElementById(id);
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          console.log(y);
+          window.scrollTo({top: y, behavior: 'smooth'});
+
         } catch (e) {
           return;
         }
       }
     },
   },
+  mounted(){
+    this.headerHeight = this.$refs.header.clientHeight
+  }
 
 }
 </script>
