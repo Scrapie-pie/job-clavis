@@ -14,7 +14,7 @@
           template(v-slot:main) Подробнее...
           template(v-slot:drop)
             p На основе данных формируем mind map:
-            Vlist
+            VList
               template(v-slot:item) систематизируем вводные данные по проекту;
               template(v-slot:item) формируем карту проекта.  
             p На основе данных брифинга и структуры реализуем прототипы ключевых разделов сайта/ проекта. После согласования и обсуждения финализируем прототипы во всех состояниях.
@@ -46,7 +46,7 @@ import VGradientUnderline from "@/components/VGradientUnderline";
 import VIconContent from "@/components/VIconContent";
 import VLink from "@/components/VLink";
 import VDrop from "@/components/VDrop";
-import Vlist from "@/components/Vlist";
+import VList from "@/components/VList";
 export default {
     name: "SectionCompetence",
     components: {
@@ -55,7 +55,7 @@ export default {
         VIconContent,
         VLink,
         VDrop,
-        Vlist
+        VList
     }
 }
 </script>
