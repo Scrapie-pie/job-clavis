@@ -1,18 +1,19 @@
 <template lang="pug">
-  main.page(id="page")
+  .page
 
-    VHeader
-    VGradient: VBanner
-    SectionWhy
-    SectionWeDo
-    SectionCompetence
-    SectionNow
-    SectionOffer
-    SectionProfit
-    SectionTeam
-    SectionProjects
-    SectionSendForm
-    VFooter
+    .main
+      VHeader
+      VGradient: VBanner
+      SectionWhy
+      SectionWeDo
+      SectionCompetence
+      SectionNow
+      SectionOffer
+      SectionProfit
+      SectionTeam
+      SectionProjects
+      SectionSendForm
+      VFooter
 
 </template>
 
@@ -50,24 +51,6 @@ export default {
         VBanner,
         VGradient
     },
-    methods: {
-      fixLsep(parent) {
-          let text = parent.innerText
-          let children = parent.children
-          let match = text ? text.match(/\u2028/g) : null;
-
-          if (text && match) {
-              parent.innerText = text.replace(/\u2028/g, '');
-          }
-          if (children.length) {
-              children.forEach( (e) => this.fixLsep(e) )
-          }
-      }
-    },
-    mounted() {
-        let page = document.getElementById("page");
-        this.fixLsep(page);
-    },
 }
 </script>
 
@@ -81,7 +64,6 @@ export default {
   height: 100vh;
   position: relative;
   background-color: $glob-color-bg;
-  flex: 1 0 auto;
 }
 
 .container {
@@ -93,10 +75,10 @@ export default {
   position: relative;
 }
 
-/*.main {*/
-/*  */
-/*  position: relative;*/
-/*}*/
+.main {
+  flex: 1 0 auto;
+  position: relative;
+}
 
 footer, .footer {
   flex: 0 0 auto;
