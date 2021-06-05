@@ -31,7 +31,7 @@
     return {
       name: null,
       email: null,
-      category: null,
+      category: 'Категория',
       message: null,
     }
   }

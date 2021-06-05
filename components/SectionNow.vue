@@ -108,14 +108,14 @@
         @include hGradient;
       }
     }
-    @media(max-width: 768px) {
+    @media(max-width: 767px) {
       .section-now__desktop {
         display: none;
       }
     }
-    @media(min-width: 768px) {
+    @media(max-width: 767px) {
       .section-now__mobile {
-        display: none;
+        display: block;
       }
     }
   }
