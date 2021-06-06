@@ -5,6 +5,8 @@
         .footer__content
           VLink(href="mailto:info@clavis.ru" target="_blank")
             | info@clavis.ru
+          VLink(href="tel:+74997147240" theme="default").footer__phone
+            | 8 (499) 714-72-40
 
           .footer__address Clavis 2021
 
@@ -46,10 +48,10 @@ export default {
       align-items: center;
     }
 
-    &__address {
+    &__address, &__phone {
       font-size: map_get($fs-other, small);
       line-height: 1.5em;
-      padding-bottom: 10px;
+      //padding-bottom: 10px;
     }
 
     &__socials {
