@@ -13,7 +13,7 @@
           input(placeholder="Email *" v-model="model.email" :class="{error:(invalid && validated)}")
       select(v-model="model.category")
         option Категория
-        option Веб-сервис / Портал / b2b-кабинет
+        option Веб-сервис / Портал / B2b-кабинет
         option Проект e-com
         option Старт-апп
         option Тендер
