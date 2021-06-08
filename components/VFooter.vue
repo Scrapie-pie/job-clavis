@@ -3,7 +3,7 @@
     .container
       .footer__wrapper
         .footer__content
-          VLink(href="mailto:info@clavis.ru" target="_blank")
+          // VLink(href="mailto:info@clavis.ru" target="_blank")
             | info@clavis.ru
           VLink(href="tel:+74997147240" theme="default").footer__phone
             | 8 (499) 714-72-40
