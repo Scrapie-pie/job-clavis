@@ -3,8 +3,8 @@
     .container
       .footer__wrapper
         .footer__content
-          VLink(href="mailto:hello@clavis.ru" target="_blank")
-            | helo@clavis.ru
+          VLink(href="mailto:hello@clavis.studio" target="_blank")
+            | hello@clavis.studio
           VLink(href="tel:+74997147240" theme="default").footer__phone
             | 8 (499) 714-72-40
 
