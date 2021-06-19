@@ -16,7 +16,7 @@ export default {
 <style lang="scss">
 .banner {
   padding-bottom: 220px;
-  padding-top: 15px;
+  padding-top: 150px;
   &__title {
     margin-bottom: .5em;
   }
